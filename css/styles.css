@@ -8,10 +8,7 @@ body {
     font-family: Roboto, sans-serif; 
     letter-spacing: 0.03em;
 }
-.link {
-    text-decoration: none;
-}
-.list, .list-buttons, .list-img {
+.list-buttons, .list-img {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -37,36 +34,37 @@ body {
     overflow: hidden; 
 }
 /*Логотип */
-.logo {
+.header__logo {
+    text-decoration: none;
     margin-right: 93px;
-    
     color: #2196F3;
     font-family: Raleway, sans-serif;
     font-size: 26px;
     line-height: 1.19;
 }
-.logo .accent{
+.header__logo--accent {
     color: #000000;
 }
 /* Навигация сайта */
-.top-line, .nav {
+.header__container, .header__nav {
     display: flex;
     align-items: center;
 }
-.site-nav,
-.contacs-nav {
+.header__list {
     display: flex;
     margin-left: auto;
+    padding: 0;
+    margin: 0;list-style: none;
 }
-.site-nav .item:not(:last-child),
-.contacs-nav .item:not(:last-child) {
+.header__item:not(:last-child) {
     margin-right: 50px;
 }
-.site-nav .link{
-    display: block;
+.header__link {
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
-
+    text-decoration: none;
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 14px;
@@ -75,47 +73,29 @@ body {
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contacs-nav .link {
-    display: flex;
-    align-items: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
-
+.header__link--color{
     color: var(--primary-text-color);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.envelope{
+.header-icon{
     width: 16px;
     height: 12px;
     margin-right: 10px;
     fill: #757575;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.smartphone{
+.header-icon--size{
     width: 10px;
     height: 16px;
-    margin-right: 10px;
-    fill: #757575;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contacs-nav .link:hover .envelope,
-.contacs-nav .link:focus .envelope,
-.contacs-nav .link:hover .smartphone,
-.contacs-nav .link:focus .smartphone {
+.header__link--color:hover .header-icon,
+.header__link--color:focus .header-icon {
     fill: #2196F3;
 }
-.site-nav .link:hover,
-.site-nav .link:focus,
-.contacs-nav .link:hover,
-.contacs-nav .link:focus { 
+.header__link:hover,
+.header__link:focus { 
     color: #2196F3;
 }
-.item.current::after{
+.header__item--current::after{
     content: "";
     display: block;
 
@@ -123,7 +103,7 @@ body {
     background: #2196F3;
     border-radius: 2px;
 }
-.site-nav .link.current {
+.header__link--current {
     color: #2196F3;
 } 
 /* Герой */
