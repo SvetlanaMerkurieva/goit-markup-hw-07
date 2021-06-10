@@ -2,7 +2,7 @@
     --title-text-color: #212121;
     --primary-text-color: #757575;
 }
-body {
+.body {
     background: #FFFFFF;
     color: var(--primary-text-color);
     font-family: Roboto, sans-serif; 
@@ -14,9 +14,6 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-}
-.header{
-    border-bottom: 1px solid #ECECEC;
 }
 .visualy-hidden {
     position: absolute !important;
@@ -42,7 +39,9 @@ body {
     color: #000000;
 }
 /* Навигация сайта */
-
+.header{
+    border-bottom: 1px solid #ECECEC;
+}
 .header__container, .header__nav {
     display: flex;
     align-items: center;
@@ -73,19 +72,19 @@ body {
 .header__link--color{
     color: var(--primary-text-color);
 }
-.header-icon{
+.header__icon{
     width: 16px;
     height: 12px;
     margin-right: 10px;
     fill: #757575;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-icon--size{
+.header__icon--size{
     width: 10px;
     height: 16px;
 }
-.header__link--color:hover .header-icon,
-.header__link--color:focus .header-icon {
+.header__link--color:hover .header__icon,
+.header__link--color:focus .header__icon {
     fill: #2196F3;
 }
 .header__link:hover,
@@ -494,29 +493,6 @@ body {
     margin-top: 0px;
     margin-bottom: 0;
 }
-
-
-/* Кнопки */
-
-.modal-form-button {
-    align-self: center;
-    width: 200px;
-    height: 50px;
-    background: #2196F3;
-    border-radius: 4px;
-    border: 0;
-
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 1.87;
-    letter-spacing: 0.06em;
-    color: #FFFFFF;
-}
-.modal-form-button:hover {
-    cursor: pointer;
-    background: #188CE8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
 /* Подвал */
 .footer {
     background-color: #2F303A;
@@ -653,7 +629,7 @@ body {
 }
 .footer__icon--margin {
     margin-left: 10px;
-
+}
     /* Модальное окно */
 
 .backdrop {
@@ -688,7 +664,7 @@ body {
     border-radius: 4px;
     padding: 40px;
 }   
-.modal-button {
+.modal-window__button {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -700,10 +676,10 @@ body {
     box-sizing: border-box;
     padding: 0;
 }
-.modal-button:hover {
+.modal-window__button:hover {
     cursor: pointer;
 }
-.icon-close {
+.modal-window__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -711,10 +687,14 @@ body {
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-button:hover .icon-close {
+.modal-window__button:hover .modal-window__icon {
     fill:  #2196F3;
 }
-.modal-window-text {
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.form__text {
     font-weight: bold;
     font-size: 20px;
     line-height: 1.15;
@@ -723,22 +703,18 @@ body {
     margin-top: 0;
     margin-bottom: 12px;
 }
-.modal-form {
-    display: flex;
-    flex-direction: column;
-}
-.modal-label {
+.form__label {
     font-size: 12px;
     line-height: 1.17;
     color: #757575;
     margin-bottom: 10px;
 }
-.modal-input-and-icon {
+.form__block {
     position: relative;
     display: block;
     margin-top: 4px;
 }
-.modal-input {
+.form__input {
     width: 100%;
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -747,11 +723,11 @@ body {
 
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-input:focus {
+.form__input:focus {
     border-color: #2196F3;
     outline: none;
 }
-.modal-icon {
+.form__icon {
     position: absolute;
     top: 50%;
     left: 15px;
@@ -759,7 +735,7 @@ body {
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-input:focus + .modal-icon {
+.form__input:focus + .form__icon {
     fill: #2196F3;
 }
 /* Валидация
@@ -769,7 +745,7 @@ body {
 .modal-input:required:focus:invalid {
     border-color: red;
 }*/
-.modal-message {
+.form__message {
     width: 100%;
     height: 120px;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -778,17 +754,17 @@ body {
     padding: 12px 16px;
     margin-top: 4px;
 }
-.modal-message::placeholder {
+.form__message::placeholder {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
 }
-.modal-message:focus {
+.form__message:focus {
     border-color: #2196F3;
     outline: none;
 }
-.modal-label-checkbox {
+.form__checkbox {
     position: relative;
     cursor: pointer;
     margin-top: 10px;
@@ -801,14 +777,14 @@ body {
     color: #757575;
 
 }
-.checkbox-square {
+.form__checkbox-square {
     display: inline-block;
     vertical-align: middle;
 
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.checkbox-mark {
+.form__checkbox-mark {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -818,13 +794,32 @@ body {
 
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
-.modal-checkbox:checked + .modal-label-checkbox>.checkbox-mark {
+.form__checkbox--view:checked + .form__checkbox>.form__checkbox-mark {
     opacity: 1;
 }
 
-.modal-checkbox:checked + .modal-label-checkbox>.checkbox-square {
+.form__checkbox--view:checked + .form__checkbox>.form__checkbox-square {
     opacity: 0;
 }
-.modal-checkbox:focus + .modal-label-checkbox>.checkbox-square {
+.form__checkbox--view:focus + .form__checkbox>.form__checkbox-square {
     fill: #2196F3;
+}
+.form__button {
+    align-self: center;
+    width: 200px;
+    height: 50px;
+    background: #2196F3;
+    border-radius: 4px;
+    border: 0;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+.form__button:hover {
+    cursor: pointer;
+    background: #188CE8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
