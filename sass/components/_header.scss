@@ -9,20 +9,28 @@
 }
 .header__list {
     display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: auto;
     padding: 0;
     list-style: none;
 }
-.header__item:not(:last-child) {
-    margin-right: 50px;
-}
-.header__item--current::after {
+.header__item {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+        margin-right: 50px;
+    }
+
+    &--current::after {
         content: "";
         display: block;
     
         height: 4px;
         background: $colorBlue;
         border-radius: 2px;
+    }
 }
 .header__link {
     display: flex;

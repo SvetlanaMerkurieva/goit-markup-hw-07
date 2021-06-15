@@ -32,7 +32,7 @@
     line-height: 1.71;
     margin-bottom: 9px;
 }
-.footer__contact {
+.footer__item {
     text-decoration: none;
     color: #FFFFFF99;
     font-style: normal;
@@ -49,6 +49,10 @@
     &:hover,
     &:focus { 
         color: $colorBlue;
+    }
+
+    &:not(:last-child) {
+        margin-right: 10px;
     }
 }
 .footer__div--position {
@@ -67,9 +71,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.footer__item:not(:last-child) {
-    margin-right: 10px;
 }
 .footer__icon {
     display: inline-flex;
